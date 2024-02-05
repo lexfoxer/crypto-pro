@@ -3,15 +3,15 @@
   "version": "2.5.2-patched.1",
   "description": "API для взаимодействия с КриптоПро",
   "license": "MIT",
-  "author": {
-    "name": "Vitalii Goma",
-    "email": "vgoma@yandex.ru",
-    "url": "https://github.com/vgoma"
-  },
+  "author": "Vitalii Goma <vgoma@yandex.ru> (https://github.com/vgoma)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lexfoxer/crypto-pro"
+    "url": "git+https://github.com/lexfoxer/crypto-pro.git"
   },
+  "bugs": {
+    "url": "https://github.com/lexfoxer/crypto-pro/issues"
+  },
+  "homepage": "https://github.com/lexfoxer/crypto-pro#readme",
   "main": "./lib/crypto-pro.js",
   "types": "./lib/crypto-pro.d.ts",
   "exports": "./lib/index.js",
@@ -30,8 +30,8 @@
     "build:definition-header:esm": "cross-env TS_CONFIG=tsconfig.esm.json node definition-header.js",
     "build:esm": "npm run build:uncompressed:esm && npm run build:definition-header:esm",
     "build": "npm run clean && npm run build:es5 && npm run build:esm",
-    "pack:clean": "cross-env-shell rimraf $npm_package_name-$npm_package_version.tgz",
-    "pack:uncompress": "cross-env-shell tar xopf $npm_package_name-$npm_package_version.tgz",
+    "pack:clean": "cross-env-shell rimraf lexfoxer-crypto-pro-$npm_package_version.tgz",
+    "pack:uncompress": "cross-env-shell tar xopf lexfoxer-crypto-pro-$npm_package_version.tgz",
     "test": "jest --coverage && coveralls < coverage/lcov.info",
     "lint": "eslint --config .eslintrc.js './src/**/*'",
     "lint:fix": "eslint --fix --config .eslintrc.js './src/**/*'",
