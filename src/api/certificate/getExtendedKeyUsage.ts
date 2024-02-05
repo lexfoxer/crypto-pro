@@ -11,7 +11,7 @@ import { Certificate } from './certificate';
 export const getExtendedKeyUsage = _afterPluginsLoaded(function (): string[] {
   const cadesCertificate = (this as Certificate)._cadesCertificate;
 
-  return eval(
+  return (0, eval)(
     _generateCadesFn(function getExtendedKeyUsage(): string[] {
       const OIDS: string[] = [];
       let count: any;

@@ -33,7 +33,7 @@ export const createXMLSignature = _afterPluginsLoaded(
     const { cadesplugin } = window;
     const cadesCertificate = await _getCadesCert(thumbprint);
 
-    return eval(
+    return (0, eval)(
       _generateCadesFn(function createXMLSignature(): string {
         let cadesSigner;
         let cadesSignedXML;

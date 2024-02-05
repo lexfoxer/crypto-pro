@@ -12,7 +12,7 @@ function CustomSystemInfo() {
         const providerType = 75;
 
         setCustomSystemInfo(await execute(function (utils) {
-          return eval(
+          return (0, eval)(
             utils._generateCadesFn(function getVersion() {
               var cadesAbout, cadesVersion, minor, major, build, version, providerName;
 

@@ -28,7 +28,7 @@ export const createDetachedSignature = _afterPluginsLoaded(
     const { cadesplugin } = window;
     const cadesCertificate = await _getCadesCert(thumbprint);
 
-    return eval(
+    return (0, eval)(
       _generateCadesFn(function createDetachedSignature(): string {
         let cadesAttrs;
         let cadesHashedData;

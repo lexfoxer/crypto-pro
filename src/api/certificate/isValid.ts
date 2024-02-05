@@ -11,7 +11,7 @@ import { Certificate } from './certificate';
 export const isValid = _afterPluginsLoaded(function (): boolean {
   const cadesCertificate = (this as Certificate)._cadesCertificate;
 
-  return eval(
+  return (0, eval)(
     _generateCadesFn(function isValid() {
       let isValid;
 

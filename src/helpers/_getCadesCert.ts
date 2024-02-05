@@ -13,7 +13,7 @@ export const _getCadesCert = _afterPluginsLoaded(
   (thumbprint: string): CadesCertificate => {
     const { cadesplugin } = window;
 
-    return eval(
+    return (0, eval)(
       _generateCadesFn(function _getCadesCert() {
         let cadesStore;
 

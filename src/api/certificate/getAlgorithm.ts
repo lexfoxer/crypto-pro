@@ -16,7 +16,7 @@ export interface AlgorithmInfo {
 export const getAlgorithm = _afterPluginsLoaded(function (): AlgorithmInfo {
   const cadesCertificate = (this as Certificate)._cadesCertificate;
 
-  return eval(
+  return (0, eval)(
     _generateCadesFn(function getAlgorithm(): AlgorithmInfo {
       const algorithmInfo: AlgorithmInfo = {
         algorithm: null,

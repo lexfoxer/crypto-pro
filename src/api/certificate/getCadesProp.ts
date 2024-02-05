@@ -12,7 +12,7 @@ import { Certificate } from './certificate';
 export const getCadesProp = _afterPluginsLoaded(function (propName: string): any {
   const cadesCertificate = (this as Certificate)._cadesCertificate;
 
-  return eval(
+  return (0, eval)(
     _generateCadesFn(function getCadesProp() {
       let propertyValue;
 

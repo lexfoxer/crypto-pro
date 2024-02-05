@@ -32,7 +32,7 @@ export const createHash = _afterPluginsLoaded(
   async (unencryptedMessage: string | ArrayBuffer, options?: Options): Promise<string> => {
     const { cadesplugin } = window;
 
-    return eval(
+    return (0, eval)(
       _generateCadesFn(function createHash(): string {
         const cadesHashedData = __cadesAsyncToken__ + __createCadesPluginObject__('CAdESCOM.HashedData');
         let messageBase64;

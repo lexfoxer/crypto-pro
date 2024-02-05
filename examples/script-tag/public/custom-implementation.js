@@ -9,7 +9,7 @@
     var providerType = 75;
 
     return window.cryptoPro.execute(function (utils) {
-      return eval(
+      return (0, eval)(
         utils._generateCadesFn(function getVersion() {
           var cadesAbout, cadesVersion, minor, major, build, version, providerName;
 

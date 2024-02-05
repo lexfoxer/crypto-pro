@@ -11,7 +11,7 @@ import { Certificate } from './certificate';
 export const exportBase64 = _afterPluginsLoaded(function (): string {
   const cadesCertificate = (this as Certificate)._cadesCertificate;
 
-  return eval(
+  return (0, eval)(
     _generateCadesFn(function exportBase64(): string {
       let base64: string;
 

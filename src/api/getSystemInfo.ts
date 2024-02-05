@@ -19,7 +19,7 @@ export const getSystemInfo = _afterPluginsLoaded(
       cspVersion: null,
     };
 
-    return eval(
+    return (0, eval)(
       _generateCadesFn(function getSystemInfo(): SystemInfo {
         let cadesAbout;
 
