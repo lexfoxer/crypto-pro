@@ -3,7 +3,7 @@ const tsConfig = require(`./${process.env.TS_CONFIG}`);
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: `./crypto-pro.ts`,
+  entry: `./index.ts`,
   module: {
     rules: [{
       test: /\.ts$/,
@@ -21,11 +21,14 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, tsConfig.compilerOptions.outDir),
-    filename: process.env.NODE_ENV === 'production' ? `crypto-pro.min.js` : `crypto-pro.js`,
+    filename: process.env.NODE_ENV === 'production' ? `index.min.js` : `index.js`,
     libraryTarget: 'umd',
     library: 'cryptoPro',
     umdNamedDefine: true
   },
   mode: process.env.NODE_ENV || 'development',
-  devtool: 'source-map'
+  devtool: 'source-map',
+  optimization: {
+    usedExports: true,
+  },
 };

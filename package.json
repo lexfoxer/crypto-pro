@@ -1,6 +1,6 @@
 {
   "name": "@lexfoxer/crypto-pro",
-  "version": "2.5.2-patched.1",
+  "version": "2.5.2-patched.2",
   "description": "API для взаимодействия с КриптоПро",
   "license": "MIT",
   "author": "Vitalii Goma <vgoma@yandex.ru> (https://github.com/vgoma)",
@@ -12,8 +12,8 @@
     "url": "https://github.com/lexfoxer/crypto-pro/issues"
   },
   "homepage": "https://github.com/lexfoxer/crypto-pro#readme",
-  "main": "./lib/crypto-pro.js",
-  "types": "./lib/crypto-pro.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "exports": "./lib/index.js",
   "files": [
     "lib/**/*",
@@ -35,12 +35,8 @@
     "test": "jest --coverage && coveralls < coverage/lcov.info",
     "lint": "eslint --config .eslintrc.js './src/**/*'",
     "lint:fix": "eslint --fix --config .eslintrc.js './src/**/*'",
-    "examples-update": "npm run examples-update:script-tag && npm run examples-update:angular && npm run examples-update:react",
-    "examples-update:script-tag": "npm --prefix ./examples/script-tag r crypto-pro && npm --prefix ./examples/script-tag i crypto-pro",
-    "examples-update:angular": "npm --prefix ./examples/angular r crypto-pro && npm --prefix ./examples/angular i crypto-pro",
-    "examples-update:react": "npm --prefix ./examples/react r crypto-pro && npm --prefix ./examples/react i crypto-pro",
     "prepack": "npm run build",
-    "postpack": "npm run pack:uncompress && npm run pack:clean",
+    "postpack": "npm run pack:uncompress && npm run pack:clean && cd package && clean-package --remove scripts && rm package.json.backup",
     "prepublishOnly": "npm run lint && jest && npm run build",
     "postpublish": "npm run examples-update"
   },
@@ -52,11 +48,14 @@
     "КриптоПро",
     "Крипто ПРО"
   ],
+  "dependencies": {
+    "cadesplugin_api.js": "2.3.5"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "2.25.0",
     "@typescript-eslint/parser": "2.25.0",
-    "cadesplugin_api.js": "2.3.5",
+    "clean-package": "^2.2.0",
     "coveralls": "3.1.1",
     "cross-env": "7.0.3",
     "eslint": "6.8.0",
