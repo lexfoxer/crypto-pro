@@ -1,0 +1,13 @@
+diff --git a/node_modules/cadesplugin_api.js/dist/cadesplugin_api.js b/node_modules/cadesplugin_api.js/dist/cadesplugin_api.js
+index ac32da5..e13bb5c 100644
+--- a/node_modules/cadesplugin_api.js/dist/cadesplugin_api.js
++++ b/node_modules/cadesplugin_api.js/dist/cadesplugin_api.js
+@@ -464,7 +464,7 @@
+         ru_cryptopro_npcades_10_native_bridge.call(functionName, array, function(e, response){
+             ex = e;
+             var str='tmpobj='+response;
+-            eval(str);
++            (0, eval)(str);
+             if (typeof (tmpobj) === "string"){
+                 tmpobj = tmpobj.replace(/\\\n/gm, "\n");
+                 tmpobj = tmpobj.replace(/\\\r/gm, "\r");
